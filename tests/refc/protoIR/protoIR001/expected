@@ -1,0 +1,15 @@
+1/3: Building ProtoIR (ProtoIR.idr)
+2/3: Building Codegen (Codegen.idr)
+3/3: Building Test (Test.idr)
+Main> int mul(int x, int y)
+{
+	switch (x) {
+		case 0:
+			return 0;
+		default :
+			int k;
+			k = x - 1;
+			return (y + mul(k, y));
+	}
+}
+Main> Bye for now!

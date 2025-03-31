@@ -1,0 +1,4 @@
+. ../../../testutils.sh
+
+idris2 --cg refc -o refc001 Test.idr
+$VALGRIND ./build/exec/refc001

@@ -161,6 +161,9 @@ chezTests = testsInDir "chez" "Chez backend" {codegen = Just Chez}
 refcTests : IO TestPool
 refcTests = testsInDir "refc" "Reference counting C backend" {codegen = Just C}
 
+protoIRcTests : IO TestPool
+protoIRcTests = testsInDir "refc/protoIR" "ProtoIR C backend" {codegen = Just C}
+
 racketTests : IO TestPool
 racketTests = testsInDir "racket" "Racket backend" {codegen = Just Racket}
   { pred = not . (`elem` ["conditions006", "conditions007"]) }
@@ -238,6 +241,7 @@ main = runner $
   , !contribLibraryTests
   , !chezTests
   , !refcTests
+  , !protoIRcTests
   , !racketTests
   , !nodeTests
   , !vmcodeInterpTests
